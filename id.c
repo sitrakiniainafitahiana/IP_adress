@@ -59,7 +59,7 @@ void registration(int *number1, int *number2, int *number3, int *number4){
         printf("    <BODY>");
         printf("        <B>valid IP adress</B></BR>");
 
-        if (*number1>0 && *number1<=127){
+        if (*number1>=0 && *number1<=127){
             printf("        ID: A Class</BR>");
         }
         else if(*number1>127 && *number1<=191){
