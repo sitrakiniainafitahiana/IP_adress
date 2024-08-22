@@ -1,0 +1,13 @@
+
+BODY{
+    background-image: url("Pictures/birds.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+.brd{
+    border: 3px solid rgb(126, 124, 125);
+    border-radius: 10px;
+    background-color: rgb(191, 226, 247);
+    width: 500px;
+    text-shadow: 5px 5px 4px black;
+}
