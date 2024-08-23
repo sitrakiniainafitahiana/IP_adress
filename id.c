@@ -1,11 +1,7 @@
-'#include<stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
-/*typedef enum{
-    A=127, B=192, C=224, D=240, E=255; 
-}Class;
-*/
 void DATA_OUTPUT();
 void registration(int *number, int *number2, int *number3, int *number4);
 
