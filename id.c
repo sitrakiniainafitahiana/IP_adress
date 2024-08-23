@@ -1,4 +1,4 @@
-#include<stdio.h>
+'#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
@@ -18,14 +18,33 @@ int main(){
 void DATA_OUTPUT(){
     char *data=NULL;
     data=getenv("QUERY_STRING");
-    int number1=0,
-		number2=0,
-		number3=0,
+    int i=0,
+	number1=0,
+	number2=0,
+	number3=0,
         number4=0;
 
-    
-    sscanf(data, "Data=%d.%d.%d.%d", &number1, &number2, &number3, &number4);
-    registration(&number1, &number2, &number3, &number4);
+    while(data[i]!='\0'){
+        i++;
+    }
+    if(i>16){ 
+        printf("content-type: text/html\n\n");
+        printf("    <!DOCTYPE HTML>");
+        printf("    <HTML>");
+        printf("    <LINK rel=\"stylesheet\" href=\"fond.css\"/>");
+        printf("    <LINK rel=\"stylesheet\" href=\"Style.css\"/>");
+        printf("        <FORM ACTION=\"id.cgi\" METHOD=\"get\">");
+        printf("        Invalid IP. Please try again,</BR>");
+        printf("        <LABEL FOR=\"Data\">IP:</LABEL>");
+        printf("        <INPUT TYPE=\"text\" NAME=\"Data\" PLACEHOLDER=\"E.g: xxx.xxx.xxx.xxx\" required></P>");        
+        printf("        <INPUT TYPE=\"SUBMIT\" VALUE=\"Send\">");        
+        printf("        </FORM></BR>");    
+        printf("        </BODY>");
+        printf("    </HTML>");    
+    }else{
+        sscanf(data, "Data=%d.%d.%d.%d", &number1, &number2, &number3, &number4);
+        registration(&number1, &number2, &number3, &number4);
+    }
 }
 
 void registration(int *number1, int *number2, int *number3, int *number4){
