@@ -23,7 +23,7 @@ void DATA_OUTPUT(){
     while(data[i]!='\0'){
         i++;
     }
-    if(i>15){ 
+    if(i>20){ 
         printf("content-type: text/html\n\n");
         printf("    <!DOCTYPE HTML>");
         printf("    <HTML>");
